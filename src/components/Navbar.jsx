@@ -29,13 +29,13 @@ const Navbar = () => {
                 ))}
             </ul>   
             <div className="block md:hidden" onClick={handleNav}>
-                {navOpen ? <AiOutlineClose size={20} className="text-white"/> : <AiOutlineMenu size={20} className="text-white"/>}
+                {navOpen ? <AiOutlineClose size={20} className="text-white font-bold"/> : <AiOutlineMenu size={20} className="text-white font-bold"/>}
             </div>
             <div className={navOpen ? "fixed top-0 left-0 w-[60%] h-full bg-black border-r border-r-cyan-400 m-4 duration-500 ease-in-out md:hidden" : "fixed left-[-100%]"}>
                 <h1 className="text-xl font-extrabold">Logo</h1>
                 <ul className="space-y-5 p-4">
                     {Navitems.map((items, key) => (
-                        <li key={key} className="hover:text-blue-300 duration-300 ease-in-out border-b border-gray-600 ">
+                        <li key={key} className="hover:text-blue-300 duration-300 ease-in-out border-b border-gray-600" onClick={handleNav}>
                             <a href={items.href}>{items.name}</a>
                         </li>
                     ))}
